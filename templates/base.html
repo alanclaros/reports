@@ -1,0 +1,118 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="views">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <title>Reports {% block title %}{% endblock %}</title>
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="icon" sizes="192x192" href="{% static 'img/micron_192x192.png' %}">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Reports">
+    <link rel="apple-touch-icon-precomposed" href="{% static 'img/micron_120x120.png' %}">
+
+    <link rel="shortcut icon" href="{% static 'img/favicon.png' %}">
+
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="{% static 'css/material.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/dialog-polyfill.css' %}">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <div class="nt_layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
+        <header class="nt_header mdl-layout__header">
+            <div class="mdl-layout__header-row">
+                <table class="w-100">
+                    <tbody>
+                        <tr>
+                            <th class="w-80 center h-100 v-bottom nt_title_row">
+                                <img src="{% static 'img/cabecera001_blanco3.jpg' %}" class="nt_cabecera">
+                            </th>
+                            <th class="w-20 right">
+                                <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+                                    id="hdrbtn">
+                                    <i class="material-icons">more_vert</i>
+                                </button>
+                                <ul class="mdl-menu mdl-js-menu mdl-js-ripple-effect mdl-menu--bottom-right"
+                                    for="hdrbtn">
+                                    <li class="mdl-menu__item" onclick="openURL('{#% url 'about' %#}');">
+                                        About</li>
+                                    </li>
+                                </ul>
+                            </th>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </header>
+
+        <div class="nt_drawer mdl-layout__drawer">
+            <header class="nt_drawer-header">
+                <img src="{% static 'img/micron_350x150.jpg' %}" class="nt_logo">
+            </header>
+            <nav class="nt_navigation mdl-navigation">
+                {% if page == 'index' or page == '' %}
+                <span class="mdl-navigation__link_select">
+                    <i class="material-icons nt_navigation_space" role="presentation">home</i>Home</span>
+                {% else %}
+                <a class="mdl-navigation__link" href="{% url 'index' %}">
+                    <i class="material-icons" role="presentation">home</i>Home</a>
+                {% endif %}
+
+                {% if page == 'view1' %}
+                <span class="mdl-navigation__link_select">
+                    <i class="material-icons nt_navigation_space" role="presentation">category</i>View1</span>
+                {% else %}
+                <a class="mdl-navigation__link" href="{% url 'view1' %}">
+                    <i class="material-icons" role="presentation">category</i>View1</a>
+                {% endif %}
+
+                {% if page == 'view2' %}
+                <span class="mdl-navigation__link_select">
+                    <i class="material-icons nt_navigation_space" role="presentation">fact_check</i>View2</span>
+                {% else %}
+                <a class="mdl-navigation__link" href="{% url 'view2' %}">
+                    <i class="material-icons" role="presentation">fact_check</i>View2</a>
+                {% endif %}
+
+                {% if page == 'view3' %}
+                <a class="mdl-navigation__link_select">
+                    <i class="material-icons nt_navigation_space" role="presentation">category</i>View3</a>
+                {% else %}
+                <a class="mdl-navigation__link" href="{% url 'view3' %}">
+                    <i class="material-icons" role="presentation">category</i>View3</a>
+                {% endif %}
+
+            </nav>
+        </div>
+        <main class="mdl-layout__content mdl-color--grey-100">
+            <div class="mdl-grid nt_content">
+                {% block content %} {% endblock %}
+            </div>
+        </main>
+    </div>
+
+    <script src="{% static 'js/material.min.js' %}"></script>
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/dialog-polyfill.js' %}"></script>
+    <script src="{% static 'js/index.js' %}"></script>
+    {% block js_modulo %}
+    {% endblock %}
+</body>
+
+</html>

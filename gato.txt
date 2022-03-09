@@ -1,0 +1,29 @@
+- crear la maquina virtual:
+	virtualenv ./venv
+- activar:
+	source ./venv/bin/activate  (desactivar: deactivate)
+- instalar django:
+	pip install django (or pip3 si se tiene python2 y python3)
+- mysql client:
+	pip install mysqlclient
+- crear un projecto django:
+	django-admin startproject app . (el . para crear en el directorio actual)
+- comprobar que levanta el servidor:
+	./manage.py runserver 0.0.0.0:8000 (verificar en 127.0.0.1:8000)
+
+crtl+C, para detener la ejecucion
+
+- copiar y reemplazar los archivos con los de la version 1.0
+	verificar el archivo app/settings.py
+	-linea 29: ALLOWED_HOST
+	-linea 30: CURRENT_HOST
+	-linea 31: HOST_FULL_PATH
+	-cambiar con los ips del servidor
+
+	desde la linea 35, parametros de conexion mysql
+
+- ejectuar:
+	./manage.py collectstatic (para cargar archivos estaticos)
+
+-correr el servidor:
+	./manage.py runserver 0.0.0.0:8000

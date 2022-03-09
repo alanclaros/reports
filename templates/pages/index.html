@@ -1,0 +1,156 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% load jinja_tags %}
+
+{% block title %} | Home {% endblock %}
+
+{% block content %}
+<table class="w-100">
+    <thead>
+        <th>
+            <br>
+            <p>
+                <span class="nt_inicio">Home</span>
+            </p>
+
+        </th>
+    </thead>
+</table>
+<br>
+<div class="w-100" style="overflow: scroll;">
+    <table class="table3 w-100">
+        <thead>
+            <th class="w-28">TRD Chart IDs</th>
+            <th class="w-8">QLHP</th>
+            <th class="w-8">QLHS</th>
+            <th class="w-8">QLHT</th>
+            <th class="w-8">QLIP</th>
+            <th class="w-8">QLIS</th>
+            <th class="w-8">QLKA</th>
+            <th class="w-8">QLKP</th>
+            <th class="w-8">QLKT</th>
+            <th class="w-8">QLLP</th>
+        </thead>
+        <tbody>
+            <tr class="back1">
+                <td class="w-28 left font_title">DEP MICRO INSP</td>
+                <td class="w-8 right">123234</td>
+                <td class="w-8 right">344543</td>
+                <td class="w-8 right">23457</td>
+                <td class="w-8 right">87898</td>
+                <td class="w-8 right">998755</td>
+                <td class="w-8 right">45656</td>
+                <td class="w-8 right">11898</td>
+                <td class="w-8 right">998822</td>
+                <td class="w-8 right">11223</td>
+            </tr>
+            <tr class="back2">
+                <td class="w-28 left font_title">DEP MICRO INSP</td>
+                <td class="w-8 right">123234</td>
+                <td class="w-8 right">344543</td>
+                <td class="w-8 right">23457</td>
+                <td class="w-8 right">87898</td>
+                <td class="w-8 right">998755</td>
+                <td class="w-8 right">45656</td>
+                <td class="w-8 right">11898</td>
+                <td class="w-8 right">998822</td>
+                <td class="w-8 right">11223</td>
+            </tr>
+            <tr class="back1">
+                <td class="w-28 left font_title">DEP MICRO INSP</td>
+                <td class="w-8 right">123234</td>
+                <td class="w-8 right">344543</td>
+                <td class="w-8 right">23457</td>
+                <td class="w-8 right">87898</td>
+                <td class="w-8 right">998755</td>
+                <td class="w-8 right">45656</td>
+                <td class="w-8 right">11898</td>
+                <td class="w-8 right">998822</td>
+                <td class="w-8 right">11223</td>
+            </tr>
+            <tr class="back2">
+                <td class="w-28 left font_title">DEP MICRO INSP</td>
+                <td class="w-8 right">123234</td>
+                <td class="w-8 right">344543</td>
+                <td class="w-8 right">23457</td>
+                <td class="w-8 right">87898</td>
+                <td class="w-8 right">998755</td>
+                <td class="w-8 right">45656</td>
+                <td class="w-8 right">11898</td>
+                <td class="w-8 right">998822</td>
+                <td class="w-8 right">11223</td>
+            </tr>
+            <tr class="back1">
+                <td class="w-28 left font_title">DEP MICRO INSP</td>
+                <td class="w-8 right">123234</td>
+                <td class="w-8 right">344543</td>
+                <td class="w-8 right">23457</td>
+                <td class="w-8 right">87898</td>
+                <td class="w-8 right">998755</td>
+                <td class="w-8 right">45656</td>
+                <td class="w-8 right">11898</td>
+                <td class="w-8 right">998822</td>
+                <td class="w-8 right">11223</td>
+            </tr>
+            <tr>
+                <td class="w-28 back2 left font_title">DEP MICRO INSP</td>
+                <td class="w-8 back2 right">123234</td>
+                <td class="w-8 back2 right">344543</td>
+                <td class="w-8 back2 right">23457</td>
+                <td class="w-8 back2 right">87898</td>
+                <td class="w-8 back2 right">998755</td>
+                <td class="w-8 back2 right">45656</td>
+                <td class="w-8 back2 right">11898</td>
+                <td class="w-8 back2 right">998822</td>
+                <td class="w-8 back2 right">11223</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<br>
+<p>read csv</p>
+<br>
+<div class="w-100">
+    <table class="table3 w-100">
+        <thead>
+            {% for head in heads %}
+            <th class="w-25">{{head}}</th>
+            {% endfor %}
+        </thead>
+
+        <tbody>
+            {% for row in data %}
+            <tr>
+                <td class="w-25 left back{{forloop.counter|back_class}} font_title">{{row.0}}</td>
+                <td class="w-25 right back{{forloop.counter|back_class}}">{{row.1}}</td>
+                <td class="w-25 right back{{forloop.counter|back_class}}">{{row.2}}</td>
+                <td class="w-25 right back{{forloop.counter|back_class}}">{{row.3}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+<br>
+<p>database</p>
+<br>
+<div class="w-100">
+    <table class="table3 w-100">
+        <thead>
+            <th class="w-50">col1</th>
+            <th class="w-50">col2</th>
+        </thead>
+
+        <tbody>
+            {% for row in rows_database %}
+            <tr>
+                <td class="w-50 left back{{forloop.counter|back_class}} font_title">{{row.0}}</td>
+                <td class="w-50 right back{{forloop.counter|back_class}}">{{row.1}} $us.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+{% endblock %}
