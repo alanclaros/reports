@@ -1,0 +1,247 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description"
+        content="NTSOFT BOLIVIA, desarrollo de software, sistemas de ventas, restaurantes, condominios, alquilier de vajilla">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <title>NTSOFT - BOLIVIA {% block title %}{% endblock %}</title>
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="icon" sizes="192x192" href="{% static 'img/logo_192.png' %}">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="NTSOFT - BOLIVIA">
+    <link rel="apple-touch-icon-precomposed" href="{% static 'img/logo_192_ios.png' %}">
+
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <!-- <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
+    <meta name="msapplication-TileColor" content="#3372DF"> -->
+
+    <link rel="shortcut icon" href="{% static 'img/favicon.png' %}">
+
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="{% static 'css/material.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/dialog-polyfill.css' %}">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <div class="nt_layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
+        <header class="nt_header mdl-layout__header">
+            <div class="mdl-layout__header-row">
+                <table class="w-100">
+                    <tbody>
+                        <tr>
+                            <th class="w-80 center h-100 v-bottom nt_title_row">
+                                <img src="{% static 'img/cabecera001_blanco3.jpg' %}" class="nt_cabecera">
+                            </th>
+                            <th class="w-20 right">
+                                <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+                                    id="hdrbtn">
+                                    <i class="material-icons">more_vert</i>
+                                </button>
+                                <ul class="mdl-menu mdl-js-menu mdl-js-ripple-effect mdl-menu--bottom-right"
+                                    for="hdrbtn">
+                                    <li class="mdl-menu__item" onclick="openURL('{% url 'acerca_de' %}');">Acerca la
+                                        Empresa</li>
+                                    <li class="mdl-menu__item" onclick="openURL('{% url 'contacto' %}');">Contacto</li>
+                                    <!-- <li class="mdl-menu__item">Legal information</li> -->
+                                </ul>
+                            </th>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </header>
+
+        <div class="nt_drawer mdl-layout__drawer">
+            <header class="nt_drawer-header">
+                <img src="{% static 'img/logo_azul001.png' %}" class="nt_logo">
+            </header>
+            <nav class="nt_navigation mdl-navigation">
+                {% if page == 'index' or page == '' %}
+                <span class="mdl-navigation__link_select">
+                    <i class="material-icons nt_navigation_space" role="presentation">home</i>Inicio</span>
+                {% else %}
+                <a class="mdl-navigation__link" href="{% url 'index' %}">
+                    <i class="material-icons" role="presentation">home</i>Inicio</a>
+                {% endif %}
+
+                {% if page == 'productos' %}
+                <span class="mdl-navigation__link_select">
+                    <i class="material-icons nt_navigation_space" role="presentation">category</i>Productos</span>
+                {% else %}
+                <a class="mdl-navigation__link" href="{% url 'productos' %}">
+                    <i class="material-icons" role="presentation">category</i>Productos</a>
+                {% endif %}
+
+                {% if page == 'servicios' %}
+                <span class="mdl-navigation__link_select">
+                    <i class="material-icons nt_navigation_space" role="presentation">fact_check</i>Servicios</span>
+                {% else %}
+                <a class="mdl-navigation__link" href="{% url 'servicios' %}">
+                    <i class="material-icons" role="presentation">fact_check</i>Servicios</a>
+                {% endif %}
+
+                {% if page == 'contacto' %}
+                <a class="mdl-navigation__link_select">
+                    <i class="material-icons nt_navigation_space" role="presentation">contact_support</i>Contacto</a>
+                {% else %}
+                <a class="mdl-navigation__link" href="{% url 'contacto' %}">
+                    <i class="material-icons" role="presentation">contact_support</i>Contacto</a>
+                {% endif %}
+
+            </nav>
+        </div>
+        <main class="mdl-layout__content mdl-color--grey-100">
+            <div class="mdl-grid nt_content">
+                {% block content %} {% endblock %}
+            </div>
+
+            <footer class="mdl-mega-footer nt_footer">
+                <div class="mdl-mega-footer__middle-section">
+
+                    <div class="mdl-mega-footer__drop-down-section">
+                        <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
+                        <h1 class="mdl-mega-footer__heading nt_footer_heading">Empresa</h1>
+                        <ul class="mdl-mega-footer__link-list">
+                            <li><a href="{% url 'index' %}">Inicio</a></li>
+                            <li><a href="{% url 'acerca_de' %}">Acerca la Empresa</a></li>
+                            <li><a href="{% url 'contacto' %}">Contacto</a></li>
+                            <!-- <li><a href="#">Updates</a></li> -->
+                        </ul>
+                    </div>
+
+                    <div class="mdl-mega-footer__drop-down-section">
+                        <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
+                        <h1 class="mdl-mega-footer__heading nt_footer_heading">Productos</h1>
+                        <ul class="mdl-mega-footer__link-list">
+                            <li><a href="{% url 'productos' %}#productos_condominios">Condominios</a></li>
+                            <li><a href="{% url 'productos' %}#productos_vajilla">Eventos Sociales</a></li>
+                            <li><a href="{% url 'productos' %}#productos_restaurantes">Restaurantes</a></li>
+                            <li><a href="{% url 'productos' %}#productos_pvi">Ventas</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="mdl-mega-footer__drop-down-section">
+                        <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
+                        <h1 class="mdl-mega-footer__heading nt_footer_heading">Servicios</h1>
+                        <ul class="mdl-mega-footer__link-list">
+                            <li><a href="{% url 'servicios' %}#servicios_desarrollo">Desarrollo de Software</a></li>
+                            <li><a href="{% url 'servicios' %}#servicios_consultoria">Consultoria Informatica</a></li>
+                            <li><a href="{% url 'servicios' %}#servicios_gestion">Gestion de Sistemas</a></li>
+                            <!-- <li><a href="#">Products</a></li>
+                            <li><a href="#">Contracts</a></li> -->
+                        </ul>
+                    </div>
+
+                    <div class="mdl-mega-footer__section">
+                        <h1 class="mdl-mega-footer__heading">&nbsp;</h1>
+                        <!-- <ul class="mdl-mega-footer__link-list">
+                            <li><a href="#">Questions</a></li>
+                            <li><a href="#">Answers</a></li>
+                            <li><a href="#">Contact us</a></li>
+                        </ul> -->
+                    </div>
+
+                </div>
+            </footer>
+        </main>
+    </div>
+
+    <!-- <i id="nt_message" class="material-icons pointer nt_contact" onclick="openURL('{% url 'contacto' %}');">comment</i> -->
+    <i id="nt_message" class="material-icons pointer nt_contact" onclick="showContactDialog();">comment</i>
+
+    <dialog id="dialogContact" class="mdl-dialog">
+        <div class="mdl-dialog__content dialog_padding">
+            <form name="form_contacto_index" method="post" action="" onsubmit="return false;">
+                {% csrf_token %}
+                <table class="w-100 table3">
+                    <thead>
+                        <tr>
+                            <th>Formulario de Contacto</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="back1">
+                            <td class="left">
+                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label w-100">
+                                    <input class="mdl-textfield__input" type="text" id="nombreIndex" name="nombreIndex">
+                                    <label class="mdl-textfield__label" for="nombreIndex">&#42; Nombre</label>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="back2">
+                            <td class="left">
+                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label w-100">
+                                    <input class="mdl-textfield__input" type="text" id="telefonosIndex"
+                                        name="telefonosIndex">
+                                    <label class="mdl-textfield__label" for="telefonosIndex">&#42;
+                                        Tel&eacute;fonos</label>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="back1">
+                            <td class="left">
+                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label w-100">
+                                    <textarea class="mdl-textfield__input" type="text" rows="3" id="mensajeIndex"
+                                        name="mensajeIndex"></textarea>
+                                    <label class="mdl-textfield__label" for="mensajeIndex">&#42; Mensaje</label>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr id="tr_loading_index" style="display: none;">
+                            <td id="td_loading_index" class="center w-100">
+                                <img src="{% static 'img/loading.gif' %}">
+
+                            </td>
+                        </tr>
+                        <tr class="back2">
+                            <td class="center">
+                                <button id="contact-btn_index" onclick="sendMessageIndex('form');"
+                                    class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect nt_btn_green">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;Enviar&nbsp;&nbsp;&nbsp;&nbsp;
+                                </button>
+                                <div id="contact-toast_index" class="mdl-js-snackbar mdl-snackbar">
+                                    <div class="mdl-snackbar__text"></div>
+                                    <button class="mdl-snackbar__action" type="button"></button>
+                                </div>
+                                <input type="hidden" name="url_main" id="url_main" value="{% url 'send_message' %}">
+                                <input type="hidden" name="ruta_img" id="ruta_img"
+                                    value="{% static 'img/loading.gif' %}">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </form>
+        </div>
+        <div class="mdl-dialog__actions">
+            <button onclick="closeContactDialog();"
+                class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect nt_btn_silver">
+                Cerrar
+            </button>
+        </div>
+    </dialog>
+
+    <script src="{% static 'js/material.min.js' %}"></script>
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/dialog-polyfill.js' %}"></script>
+    <script src="{% static 'js/index.js' %}"></script>
+    {% block js_modulo %}
+    {% endblock %}
+</body>
+
+</html>
