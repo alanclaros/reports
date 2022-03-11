@@ -1,0 +1,6 @@
+{% for comment in comments %}
+<p>
+    - {{comment.comment}}
+</p>
+{% endfor %}
+<input type="hidden" id="comment_response_{{row_id}}" value="{{response}}">
