@@ -28,6 +28,10 @@ apm lambda new
 apm endpoint new
 ```
 
+<!-- ![x][def]
+
+[def]: https://ntsoft-bolivia.com/icon_utilities.png -->
+
 ![x][def]
 
-[def]: https://ntsoft-bolivia.com/icon_utilities.png
+[def]: /img/caja.jpg
