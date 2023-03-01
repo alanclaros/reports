@@ -27,3 +27,7 @@ apm lambda new
 ```shell
 apm endpoint new
 ```
+
+![x][def]
+
+[def]: https://ntsoft-bolivia.com/icon_utilities.png
