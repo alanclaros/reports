@@ -96,7 +96,7 @@ https://dev.rwallet.pa.tigomoney.io/utilities/v1-0-0-0/utils/
 
 https://dev.rwallet.pa.tigomoney.io/utilities/v1-0-0-0/utils/email
 
-## Curl
+- Curl
 
 ```shell
 curl --location 'https://dev.rwallet.pa.tigomoney.io/utilities/v1-0-0-0/utils/email' \
@@ -108,4 +108,10 @@ curl --location 'https://dev.rwallet.pa.tigomoney.io/utilities/v1-0-0-0/utils/em
     "message": "This is an Email Test message",
     "email": "mail@millicom.com"
 }'
+```
+
+- Dependency
+
+```shell
+arn:aws:lambda:us-east-1:177933569100:layer:AWS-Parameters-and-Secrets-Lambda-Extension:4
 ```
