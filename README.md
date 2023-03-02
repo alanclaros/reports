@@ -1,3 +1,15 @@
+# APIs Wallet Utilities for Tigo Money
+
+## _Wallet Utilities made with Python_
+
+![x][def]
+
+[def]: /img/icon_utilities.png
+
+Wallet Utilities: Is a service for send Push and OTP notifications.
+
+Sending wallet push and OTP notifications to Tigo Money devices with Tigo App.
+
 ## Create an virtual environment
 
 ```shell
@@ -27,11 +39,3 @@ apm lambda new
 ```shell
 apm endpoint new
 ```
-
-<!-- ![x][def]
-
-[def]: https://ntsoft-bolivia.com/icon_utilities.png -->
-
-![x][def]
-
-[def]: /img/caja.jpg
