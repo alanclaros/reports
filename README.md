@@ -136,7 +136,7 @@ https://dev.rwallet.pa.tigomoney.io/utilities/v1-0-0-0/utils/generaHTMLOTP
 
 ```shell
 curl --location --request GET 'https://dev.rwallet.pa.tigomoney.io/utilities/v1-0-0-0/utils/generaHTMLOTP' \
---header 'x-api-key: 8VbDe8Xx7V77teF4vXOd53Ax0v81awk4DjTp2WCc'
+--header 'x-api-key: XXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
 ```
 
 - Dependency
@@ -165,7 +165,7 @@ https://dev.rwallet.pa.tigomoney.io/utilities/v1-0-0-0/utils/totp
 
 ```shell
 curl --location --request POST 'https://dev.rwallet.pa.tigomoney.io/utilities/v1-0-0-0/utils/totp' \
---header 'x-api-key: 8VbDe8Xx7V77teF4vXOd53Ax0v81awk4DjTp2WCc' \
+--header 'x-api-key: XXXXXXXXXXXXXXXXXXXXXXXXXXXXX' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "secret": "NOXCFJKYLFL33KHTMW32MRTV72QHLL66",
@@ -177,7 +177,7 @@ curl --location --request POST 'https://dev.rwallet.pa.tigomoney.io/utilities/v1
 
 ```shell
 curl --location --request GET 'https://dev.rwallet.pa.tigomoney.io/utilities/v1-0-0-0/utils/totp?code=457280&token_id=dfgDRGWER34' \
---header 'x-api-key: 8VbDe8Xx7V77teF4vXOd53Ax0v81awk4DjTp2WCc'
+--header 'x-api-key: XXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
 ```
 
 - Dependency
@@ -211,10 +211,10 @@ https://dev.rwallet.pa.tigomoney.io/utilities/v1-0-0-0/utils/tokenized-cards
 - Curl POST
 
 ```shell
-curl --location --request POST 'https://qa.rwallet.pa.tigomoney.io/utilities/v1-0-0-0/utils/tokenized-cards' \
+curl --location --request POST 'https://dev.rwallet.pa.tigomoney.io/utilities/v1-0-0-0/utils/tokenized-cards' \
 --header 'Accept: application/json' \
 --header 'X-Amz-Date: Mon, 20 Feb 2023 20:38:34 GMT' \
---header 'x-api-key: Im2eCOgo4f3vPs4sJjZul78KQcz3SMnt33IWcFdL'
+--header 'x-api-key: XXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
 --data-raw '{
     "customerPG": "918273645",
     "tokenizedCardId": "dfgDRGWER34",
@@ -226,10 +226,10 @@ curl --location --request POST 'https://qa.rwallet.pa.tigomoney.io/utilities/v1-
 - Curl GET
 
 ```shell
-curl --location --request GET 'https://qa.rwallet.pa.tigomoney.io/utilities/v1-0-0-0/utils/localization?phoneNumber=50379238154&countryCode=503' \
+curl --location --request GET 'https://dev.rwallet.pa.tigomoney.io/utilities/v1-0-0-0/utils/localization?phoneNumber=50379238154&countryCode=503' \
 --header 'Accept: application/json' \
 --header 'X-Amz-Date: Mon, 20 Feb 2023 20:38:34 GMT' \
---header 'x-api-key: Im2eCOgo4f3vPs4sJjZul78KQcz3SMnt33IWcFdL'
+--header 'x-api-key: XXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
 ```
 
 - Dependency
@@ -263,10 +263,10 @@ https://dev.rwallet.pa.tigomoney.io/utilities/v1-0-0-0/utils/localization
 - Curl
 
 ```shell
-curl --location --request GET 'https://qa.rwallet.pa.tigomoney.io/utilities/v1-0-0-0/utils/localization?phoneNumber=50379238154&countryCode=503' \
+curl --location --request GET 'https://dev.rwallet.pa.tigomoney.io/utilities/v1-0-0-0/utils/localization?phoneNumber=50379238154&countryCode=503' \
 --header 'Accept: application/json' \
 --header 'X-Amz-Date: Mon, 20 Feb 2023 20:38:34 GMT' \
---header 'x-api-key: Im2eCOgo4f3vPs4sJjZul78KQcz3SMnt33IWcFdL'
+--header 'x-api-key: XXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
 ```
 
 - Dependency
@@ -295,7 +295,7 @@ https://dev.rwallet.pa.tigomoney.io/utilities/v1-0-0-0/utils/phone-validation
 
 ```shell
 curl --location --request POST 'https://dev.rwallet.pa.tigomoney.io/utilities/v1-0-0-0/utils/phone-validation' \
---header 'x-api-key: 8VbDe8Xx7V77teF4vXOd53Ax0v81awk4DjTp2WCc' \
+--header 'x-api-key: XXXXXXXXXXXXXXXXXXXXXXXXXXXXX' \
 --header 'Content-Type: application/json' \
 --data-raw '{
   "phoneNumber": "090000000",
@@ -329,7 +329,7 @@ https://dev.rwallet.pa.tigomoney.io/utilities/v1-0-0-0/utils/presinged-url
 
 ```shell
 curl --location --request POST 'https://dev.rwallet.pa.tigomoney.io/utilities/v1-0-0-0/utils/phone-validation' \
---header 'x-api-key: 8VbDe8Xx7V77teF4vXOd53Ax0v81awk4DjTp2WCc' \
+--header 'x-api-key: XXXXXXXXXXXXXXXXXXXXXXXXXXXXX' \
 --header 'Content-Type: application/json' \
 --data-raw '{
   "phoneNumber": "090000000",
@@ -368,10 +368,10 @@ https://dev.rwallet.pa.tigomoney.io/utilities/v1-0-0-0/utils/push-notification
 - Curl
 
 ```shell
-curl --location --request POST 'https://qa.rwallet.pa.tigomoney.io/utilities/v1-0-0-0/utils/push-notification' \
+curl --location --request POST 'https://dev.rwallet.pa.tigomoney.io/utilities/v1-0-0-0/utils/push-notification' \
 --header 'Content-Type: application/json' \
 --header 'Accept: application/json' \
---header 'x-api-key: Im2eCOgo4f3vPs4sJjZul78KQcz3SMnt33IWcFdL' \
+--header 'x-api-key: XXXXXXXXXXXXXXXXXXXXXXXXXXXXX' \
 --data '{
     "token": "fZ-rRQ-kRKGUtVEihc7Xur:APA91bGNUELOrvyBvL144c8rAJhxRXFyOcS5hoTraw5lNUe3Jyr5J4qOJfU1nRB3alkkuRiPr7nfBPo-JzfCJhqNb-axeJAoHry-3_ZM8DERVVHubtK06cxI0iBKdj4Vcq47-dS4uyzd",
     "title": "Title test",
@@ -392,7 +392,8 @@ pinpoint
 
 ```shell
 appId: "8cbcf756d46247aeaa1a14878462a193",
-"appBOId": "7dbaec4ce71049ffadec9f8e0f9f3ebf","appPYId":  "510d54476d6447c69adc51a3c762dafd"
+appBOId: "7dbaec4ce71049ffadec9f8e0f9f3ebf",
+appPYId:  "510d54476d6447c69adc51a3c762dafd"
 ```
 
 - UnitTest
