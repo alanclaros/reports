@@ -81,3 +81,31 @@ aws sso login
 ```shell
 apm api run
 ```
+
+# Amazon Api Gateway
+
+<b>dev-wallet-utilities</b>
+
+Panama dev enviroment:
+
+https://dev.rwallet.pa.tigomoney.io/utilities/v1-0-0-0/utils/
+
+## _EndPoints_
+
+## Email
+
+https://dev.rwallet.pa.tigomoney.io/utilities/v1-0-0-0/utils/email
+
+## Curl
+
+```shell
+curl --location 'https://dev.rwallet.pa.tigomoney.io/utilities/v1-0-0-0/utils/email' \
+--header 'Content-Type: application/json' \
+--header 'Accept: application/json' \
+--header 'x-api-key: 8VbDe8Xx7V77teF4vXOd53Ax0v81awk4DjTp2WCc' \
+--data-raw '{
+    "subject": "Subject Email Test",
+    "message": "This is an Email Test message",
+    "email": "mail@millicom.com"
+}'
+```
