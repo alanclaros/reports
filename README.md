@@ -10,6 +10,22 @@ Wallet Utilities: Is a service for send Push and OTP notifications.
 
 Sending wallet push and OTP notifications to Tigo Money devices with Tigo App.
 
+## Features
+
+- Send Push Notifications.
+- Send OTP Notifications.
+
+## How it works ?
+
+> Tigo's company sends notifications of the operations and transactions carried out with the mobile wallet app, to mobile devices.
+
+## Tech
+
+Wallet Utilities uses this items to work properly:
+
+- [Python] - version>=3.10, <=3.9.9
+- [AWS-Lambda] - Amazon Web Service, lambda functions
+
 ## Create an virtual environment
 
 ```shell
@@ -19,13 +35,27 @@ python -m venv venv
 ## Activate virtual environment
 
 ```shell
-.\venv\Scripts\activate
+- macOx: source ./venv/bin/activate
+- windows: ./venv/Scripts/activate.bat
+- linux: source ./venv/bin/activate
+```
+
+## Upgrade pip
+
+```shell
+python -m pip install --upgrade pip
 ```
 
 ## Install dependencies
 
 ```shell
 pip install -r requirements.txt
+```
+
+## APM Project Install
+
+```shell
+apm project install
 ```
 
 ## Create a new lambda.
@@ -38,4 +68,16 @@ apm lambda new
 
 ```shell
 apm endpoint new
+```
+
+## AWS SSO Login
+
+```shell
+aws sso login
+```
+
+## Run API
+
+```shell
+apm api run
 ```
