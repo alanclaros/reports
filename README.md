@@ -115,3 +115,15 @@ curl --location 'https://dev.rwallet.pa.tigomoney.io/utilities/v1-0-0-0/utils/em
 ```shell
 arn:aws:lambda:us-east-1:177933569100:layer:AWS-Parameters-and-Secrets-Lambda-Extension:4
 ```
+
+- UnitTest
+
+```shell
+command test
+```
+
+- Sequence Diagram
+
+![x][def1]
+
+[def1]: /img/email.jpg
